@@ -1,12 +1,19 @@
 /* * * * * * * * * * * * * * * * * * * *
 *	Name		: Pang Jin Xiong Joel  *
-*	Student ID	: 4643409              *
+*	Student ID	: 4643409			   *
+*	@author Joel, 4643409			   *
 * * * * * * * * * * * * * * * * * * * */
 #include "stdafx.h"
 #include "ev.h"
 #include "mysmalllib.h"
 #include <iomanip>
 
+/**
+Format input from file
+
+@param t1 String vector from file
+@param t2 Parsing formatted t1
+*/
 inline void formString(std::vector<std::string> t1, std::vector<std::string> &t2)
 {
 	for (int i = 0; i < t1.size(); i++)
@@ -17,6 +24,12 @@ inline void formString(std::vector<std::string> t1, std::vector<std::string> &t2
 	}
 }
 
+/**
+Calculate threshold
+
+@param evnts Reference to the vector of events
+@return Calculated threshold of the events
+*/
 inline double threshold(std::vector<mylib::ev> &evnts)
 {
 	double a = 0.00;
@@ -25,6 +38,15 @@ inline double threshold(std::vector<mylib::ev> &evnts)
 	return (a * (double)2);
 }
 
+/**
+Test distance of a day 
+
+@param evnts Reference to the vector of events
+@param n Day/line number
+@param formTest Parsing the formatted test data string by refernce
+@param alarms Parsing alarms by reference
+@return Total distance of the day
+*/
 double tDistance(std::vector<mylib::ev> &evnts, int n, std::string &formTest, std::string &alarms)
 {
 	double d = 0.00;
@@ -54,6 +76,13 @@ double tDistance(std::vector<mylib::ev> &evnts, int n, std::string &formTest, st
 	return d;
 }
 
+/**
+Format string to be within a certain set length. Replaces characters after cut off with ...
+
+@param s String to be formatted
+@param limit Cut off limit
+@return Formatted string
+*/
 std::string cLimit(std::string s, int limit)
 {
 	if (s.length() > limit)
@@ -63,6 +92,14 @@ std::string cLimit(std::string s, int limit)
 	return s;
 }
 
+/**
+Set precision
+
+@param data DOUBLE to be formatted
+@param m Precision of the formatting
+@param pre Set fixed
+@return formatted string
+*/
 inline std::string setP(double data, int m, bool pre)
 {
 	std::stringstream ss;
@@ -72,6 +109,11 @@ inline std::string setP(double data, int m, bool pre)
 	return ss.str();
 }
 
+/**
+Run display
+
+@param evnts Reference to the vector of events
+*/
 void display(std::vector<mylib::ev> &evnts)
 {
 	std::cout << std::setw(30) << std::left << "Events" << std::setw(15) << std::right << "Average"
@@ -98,6 +140,9 @@ void display(std::vector<mylib::ev> &evnts)
 	}
 }
 
+/**
+Main function
+*/
 int main(int argc, char* argv[])
 {
 	std::vector<mylib::ev> evnts;
