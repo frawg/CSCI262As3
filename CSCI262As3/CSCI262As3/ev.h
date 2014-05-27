@@ -1,3 +1,7 @@
+/* * * * * * * * * * * * * * * * * * * *
+*	Name		: Pang Jin Xiong Joel  *
+*	Student ID	: 4643409              *
+* * * * * * * * * * * * * * * * * * * */
 #include "stdafx.h"
 
 namespace mylib

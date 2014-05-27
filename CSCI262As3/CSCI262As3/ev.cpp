@@ -1,5 +1,8 @@
+/* * * * * * * * * * * * * * * * * * * *
+*	Name		: Pang Jin Xiong Joel  *
+*	Student ID	: 4643409              *
+* * * * * * * * * * * * * * * * * * * */
 #include "ev.h"
-#include <cmath>
 
 namespace mylib
 {
